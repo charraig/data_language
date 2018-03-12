@@ -1,0 +1,32 @@
+## Introduction
+Start of by defining random and comparing it to the colloquial version
+Also talk about "variable" in terms of statistics vs math
+
+## Vectors
+
+* A _vector_ is really just a $mx1$ (column vector) or a $1xn$ (row vector) matrix. 
+* But, _vector_ is often used to imply that the values of the vector are magnitudes in a coordinate system, allowing that vector to fully represent a magnitude and a direction.
+* Also of note is that it is accepted mathematical practice to assume a vector is a _column vector_.
+
+In the illustration below, if $\left( \hat{i}, \hat{j}, \hat{k} \right)$ define the coordinate system (techically referred to as a _basis_), the vector $\begin{pmatrix} a \\ b \\ c \end{pmatrix}$ fully defines $\vec{v}$.
+
+![Vector](vector_notation.png "Vector has magnitude and direction")
+
+## Matrix & Vector Dimensions
+
+* The diagram illustrates why a vector of length 3 is referred to as a 3-dimensional vector -- it uses a 3-dimensional coordinate system (the _cardinality_ of the _basis_). This is technically a Hamel dimension or an algebraic dimension.
+* Say we have many such vectors and we want to operate on all of them at once. Easy, we just take all the column vectors and write them next to each other. Bam, we have a matrix.
+* But recall that a vector doesn't _have_ to be a column vector. What if we wrote the vectors as rows and stack them? Still a matrix. In fact, by appearance alone, it would be virtually indistinguishable from the first one we made.
+* So every $m x n$ matrix has a _column space_ of $m$-dimensional vectors and a _row space_ of $n$-dimensional vectors. But the dimension of either __space__ is equal to $\min \left( m, n \right)$ (this is the _rank_ of a matrix), referring again to the dimension of the back-stage coordinate system required.
+
+
+![Vector](vector_notation.png "Vector has magnitude and direction")
+
+## Data Frame Dimensions
+
+* Okay, so how do vectors relate to data? Look again at the vector diagram -- $\vec{v}$ is pointing to $P$, a single point in a 3-dimensional space. Let's replace "x-axis" with "outside temperature", "y-axis" with "humidity", and "z-axis" with "office temperature". Perhaps now you can see how a measurement of these three values at a single time, a "data point", is actually just a vector in the (outside temperature, humidity, office temperature) space.
+* When we take many such measurements, we have data distributed over this space, though perhaps not uniformly.
+* So the question becomes, how do we build our matrix from these vectors? In the tidy data framework, we __stack row vectors__. This means, that our vector dimensionality is equivalent to the number of __variables__ or __columns__.
+* Nevertheless, just as when talking about a matrix, we still might say that our data frame has dimensions "m by n".
+
+![Vector](vector_notation.png "Vector has magnitude and direction")
